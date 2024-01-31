@@ -10,8 +10,6 @@ function Searchbar({onSubmit} ) {
     setTimeout(() => {
       onSubmit(event.target.value);
     }, 1000);
-   
-
   }
 
   const handleKeyDown = (event) => {
@@ -26,7 +24,7 @@ function Searchbar({onSubmit} ) {
 
   return (
         <div className='flex items-center'>
-            <input type="text" onKeyDown={handleKeyDown}  onChange={handleText} value={text}  className='border-2 border-black-600 w-80 h-10 rounded mx-1 outline-none'/>
+            <input placeholder='  movie name here' type="text" onKeyDown={handleKeyDown}  onChange={handleText} value={text}  className='border-2 border-black-600 w-80 h-10 rounded mx-1 outline-none'/>
             {/* <Button onClick={handleSearch} >Search</Button> */}
         </div>
   )

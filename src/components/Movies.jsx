@@ -24,7 +24,7 @@ function Movies({ searchInfo }) {
 
     return (
        
-            <div className='flex flex-wrap justify-start items-end' style={{if(){}    }}  >{
+            <div className='flex flex-wrap justify-start ml-4 items-end' style={{if(){}    }}  >{
 
                 movies.filter((movie) => movie.title.toLowerCase().includes(searchInfo.toLowerCase())).length !== 0 ?
                     movies.filter((movie) => movie.title.toLowerCase().includes(searchInfo.toLowerCase())).map((movie) =>

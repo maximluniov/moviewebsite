@@ -2,6 +2,7 @@ import Searchbar from "./components/Searchbar";
 import Movies from "./components/Movies";
 import { useState } from "react";
 import index from './assets/index'
+import Footer from "./components/Footer";
 function App() {
 
 
@@ -19,6 +20,7 @@ const [info,setInfo] = useState("")
       </div>
         <Searchbar onSubmit={handleInfo} />
         <Movies searchInfo={info} />
+        <Footer/>
     </div>
   );
 }
