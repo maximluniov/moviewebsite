@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.animated{
+    opacity: 0.25;
+    animation: animation 2s forwards;
+}
+.animated:hover{
+    animation: grow .5s forwards;
+}
+
+@keyframes grow{
+    25% {transform: scale(1.02);
+        opacity: 1;}
+    100% {transform: scale(1.05);
+        opacity: 1;}
+}
+
+@keyframes animation {
+    0% {opacity: 0.25;}
+    100% {opacity: 1;}
+  }
