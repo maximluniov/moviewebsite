@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from './Button'
+// import Button from './Button'
 
 function Searchbar({onSubmit} ) {
 
@@ -23,9 +23,8 @@ function Searchbar({onSubmit} ) {
   // }
 
   return (
-        <div className='flex items-center'>
-            <input placeholder='  movie name here' type="text" onKeyDown={handleKeyDown}  onChange={handleText} value={text}  className='border-2 border-black-600 w-80 h-10 rounded mx-1 outline-none'/>
-            {/* <Button onClick={handleSearch} >Search</Button> */}
+        <div className='flex items-center p-4' >
+            <input placeholder='   movie name here' type="text" id='input' onKeyDown={handleKeyDown}  onChange={handleText} value={text}  className='border-2 border-black-600 w-80 h-10 rounded mx-1 outline-none'/>
         </div>
   )
 }

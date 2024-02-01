@@ -11,6 +11,10 @@
     animation: grow .5s forwards;
 }
 
+.animatedbutton:hover{
+    animation: grow .2s forwards;
+}
+
 @keyframes grow{
     25% {transform: scale(1.02);
         opacity: 1;}
