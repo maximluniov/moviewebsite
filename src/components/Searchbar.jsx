@@ -24,7 +24,7 @@ function Searchbar({onSubmit} ) {
 
   return (
         <div className='flex items-center p-4' >
-            <input placeholder='   movie name here' type="text" id='input' onKeyDown={handleKeyDown}  onChange={handleText} value={text}  className='border-2 border-black-600 w-80 h-10 rounded mx-1 outline-none'/>
+            <input placeholder='   Movie name here' autocomplete="off" type="text" id='input' onKeyDown={handleKeyDown}  onChange={handleText} value={text}  className='border-2 border-black-600 w-80 h-10 rounded mx-1 outline-none'/>
         </div>
   )
 }
