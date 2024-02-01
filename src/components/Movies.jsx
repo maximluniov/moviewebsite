@@ -1,30 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Movie from './Movie';
 import index from '../assets/index'
 import { Link } from "react-router-dom";
 
 
-function Movies({ searchInfo ,dataMovies }) {
+function Movies({ searchInfo  }) {
 
     const apiUrl = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=bdc5e0db2b05f69027de41136e5c469d&query=";
 
     const [movies, setMovies] = useState([]);
 
-    
+    const getMovie = useCallback(async ()=> {
+        fetch(apiUrl)
+                .then(response => response.json())
+                .then(response => setMovies(response.results))
+    },[])
 
     useEffect(() => {
-        const getMovie = () => {
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(response => {
-                    setMovies(response.results);
-                    dataMovies(response.results);
-                })
-    
-        }
         getMovie();
-        
-    }, [searchInfo,dataMovies])
+    }, [searchInfo,getMovie])
 
 
 

@@ -22,11 +22,9 @@ const Moviepage = (movie) => {
                 </div>
                 <div className='flex flex-col justify-between items-center'>
                     <p className='underline underline-offset-1 ml-4'>Rate: {movie.vote_average}({movie.vote_count})</p>
-                   <Link to="/"> <button className='animatedbutton w-20 rounded-md' style={{ backgroundColor:"#bababa"}}> Back </button></Link>
-                   
+                   <Link to="/"> <button className='animatedbutton w-20 rounded-md' style={{ backgroundColor:"#bababa"}}> Back </button></Link> 
                 </div>
             </div>
-
         </div>
     )
 }

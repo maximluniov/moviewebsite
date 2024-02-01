@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import index from './assets/index'
@@ -16,21 +16,15 @@ function App() {
   const apiUrl = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=bdc5e0db2b05f69027de41136e5c469d&query=";
 
 
-  useEffect(() => {
-    const getMovie = () => {
-      fetch(apiUrl)
+  const getMovie = useCallback(async ()=> {
+    fetch(apiUrl)
         .then(response => response.json())
         .then(response => setMovies(response.results))
-    }
+  },[])
+
+  useEffect(() => {
     getMovie();
-  }, [])
-
-
-
-  const handleDataMovies = (event) => {
-    // setMovies(event);
-    // console.log(event)
-  }
+  }, [getMovie])
 
   return (
     <BrowserRouter>
@@ -41,7 +35,7 @@ function App() {
         
 
         <Routes>
-          <Route path="/" element={<> <Main dataMovies={handleDataMovies} />  </>} />
+          <Route path="/" element={<Main  />} />
 
           {movies.map((movie) => (
             <Route key={movie.id} path={`/${movie.title.replaceAll(' ', '').toLowerCase()}`} element={<Moviepage {...movie} />} />
